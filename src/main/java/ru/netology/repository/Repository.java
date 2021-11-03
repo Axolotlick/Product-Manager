@@ -3,6 +3,7 @@ package ru.netology.repository;
 import ru.netology.domain.Product;
 
 public class Repository {
+
     private Product[] products = new Product[0];
 
     public void save(Product product) {

@@ -5,11 +5,14 @@ import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 import ru.netology.repository.Repository;
 
+import java.util.Objects;
+
 
 public class ProductManager {
     private Repository repo;
+
     public ProductManager(Repository repo) {
-        this.repo=repo;
+        this.repo = repo;
     }
 
     public void add(Product product) {
@@ -22,7 +25,6 @@ public class ProductManager {
             if (matches(product, text)) {
                 Product[] tmp = new Product[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
-                // используйте System.arraycopy, чтобы скопировать всё из result в tmp
                 tmp[tmp.length - 1] = product;
                 result = tmp;
             }
